@@ -1,0 +1,37 @@
+name: Publish Windows update
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'payload/VERSION'
+      - 'payload/*.exe'
+      - 'payload/*.exe.blockmap'
+      - 'payload/latest.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Verify and publish release assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          version="$(cat payload/VERSION)"
+          test "$version" != ""
+          installer="payload/SirajLighting-Setup-${version}.exe"
+          test -s "$installer"
+          test -s "${installer}.blockmap"
+          test -s payload/latest.yml
+          if gh release view "v${version}" >/dev/null 2>&1; then
+            gh release upload "v${version}" "$installer" "${installer}.blockmap" payload/latest.yml --clobber
+          else
+            gh release create "v${version}" "$installer" "${installer}.blockmap" payload/latest.yml --title "Siraj Lighting ${version}" --notes "تحديث سراج لإدارة محلات الإنارة."
+          fi
