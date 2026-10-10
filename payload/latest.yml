@@ -1,8 +1,8 @@
-version: 1.0.3
+version: 1.0.4
 files:
-  - url: SirajLighting-Setup-1.0.3.exe
-    sha512: zGcQLV+pGMqr93MstaOUxkyvjt++1Z2NIa1rEkPVSmAQo7adOBF/4w0bfHRkuGPHK0VH05u3tG/X+kwRr013fg==
-    size: 110853365
-path: SirajLighting-Setup-1.0.3.exe
-sha512: zGcQLV+pGMqr93MstaOUxkyvjt++1Z2NIa1rEkPVSmAQo7adOBF/4w0bfHRkuGPHK0VH05u3tG/X+kwRr013fg==
-releaseDate: '2026-10-10T18:14:55.937Z'
+  - url: SirajLighting-Setup-1.0.4.exe
+    sha512: hzEqbNBK9j+vvu0mbkYJn2Alp82Omh7T/UmJwBnWfbRRsuvy+Q+mdnWH58v7Xhod4071EP/Sqd4SiNpgSrZwYg==
+    size: 110853796
+path: SirajLighting-Setup-1.0.4.exe
+sha512: hzEqbNBK9j+vvu0mbkYJn2Alp82Omh7T/UmJwBnWfbRRsuvy+Q+mdnWH58v7Xhod4071EP/Sqd4SiNpgSrZwYg==
+releaseDate: '2026-10-10T18:50:58.573Z'
